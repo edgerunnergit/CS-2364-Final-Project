@@ -1,4 +1,5 @@
 use bevy::prelude::*;
+use bevy_prototype_lyon::shapes;
 
 pub struct Simulation {
     params: Params,
@@ -35,5 +36,16 @@ impl Simulation {
     pub fn new(mut params: Params) -> Self {
         params.get_rest_lengths(params.r[0]);
         Simulation { params }
+    }
+}
+
+impl Plugin for Simulation {
+    fn build(&self, app: &mut App) {
+        let mut grid: Vec<Vec<Entity>> = Vec::new();
+
+        let shape = shapes::Circle {
+            radius: self.params.node_size,
+            ..shapes::Circle::default()
+        };
     }
 }

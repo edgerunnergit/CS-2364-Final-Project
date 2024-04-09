@@ -8,6 +8,7 @@ version = "0.1.0"
 dependencies = [
  "bevy",
  "bevy_prototype_lyon",
+ "bevy_silk",
  "tokio",
 ]
 
@@ -900,6 +901,16 @@ dependencies = [
  "serde",
  "thiserror",
  "uuid",
+]
+
+[[package]]
+name = "bevy_silk"
+version = "0.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "643a75f9cf75b88547c154e25cee175c49e71083ec9a44edc5c61e9a7a56e4cc"
+dependencies = [
+ "bevy",
+ "thiserror",
 ]
 
 [[package]]
