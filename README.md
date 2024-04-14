@@ -1,3 +1,7 @@
+Baseline: A mesh sheet flowing in the air where we can put additional forces via our mouse.
+Current Work Done: Aproximately 40% (self - evaluation)
+Date: 21st of April
+
 # Cloth Simulation and Rendering for Virtual Environments
 
 ## Introduction:

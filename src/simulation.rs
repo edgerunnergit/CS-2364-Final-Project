@@ -49,3 +49,14 @@ impl Plugin for Simulation {
         };
     }
 }
+
+fn render_edges(
+    mut lines: ResMut<DebugLines>,
+    mut edges: Query<&Edge>,
+    mut nodes: Query<(Entity, &Transform), With<Index>>,
+) {
+    for edge in edges.iter_mut() {
+        let [(_, a_pos), (_, b_pos)] = nodes.many_mut([edge.a, edge.b]);
+        lines.line(a_pos.translation, b_pos.translation, 0.0);
+    }
+}

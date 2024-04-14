@@ -3,12 +3,30 @@ mod simulation;
 use bevy::prelude::*;
 use bevy_prototype_lyon::prelude::*;
 use bevy_silk::prelude::*;
-// use simulation::{Params, Simulation};
+use simulation::{Params, Simulation};
 
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
-        .add_plugins(ShapePlugin)
-        .add_plugins(ClothPlugin)
+        .add_plugin(ShapePlugin)
+        .add_plugin(Simulation::new(Params {
+            node_size: 10.0,
+            node_num_x: 50,
+            node_num_y: 30,
+            dt: 0.025,
+            m: 1.0,
+            g: 1000.0,
+            mouse_force: Vec3::new(11000.0, 5000.0, 0.0),
+            r: Vec3::new(20.0, 0.0, 0.0),
+            k: Vec3::new(3600.0, 1.0, 1.0),
+            dampen_factor: 0.99,
+            enable_wind: false,
+            side_panel_width: 300.0,
+            ..Default::default()
+        }))
+        .insert_resource(WindowDescriptor {
+            fit_canvas_to_parent: true,
+            ..default()
+        })
         .run();
 }
