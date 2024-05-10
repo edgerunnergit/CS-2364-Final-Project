@@ -77,6 +77,7 @@ pub fn ui_side_panel(
             ui.with_layout(egui::Layout::bottom_up(egui::Align::Center), |ui| {
                 ui.add(egui::Hyperlink::from_label_and_url(
                     "created for computer graphics @ Ashoka",
+                    "https://www.ashoka.edu.in/",
                 ));
             });
         });

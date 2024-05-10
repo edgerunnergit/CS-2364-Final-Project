@@ -60,6 +60,7 @@ pub fn physics_update(
     }
 }
 
+// This system applies gravity to Nodes without Pinned component
 fn apply_gravity(
     params: &Res<Params>,
     nodes: &mut Query<
@@ -115,6 +116,7 @@ fn apply_spring_forces(
     }
 }
 
+// Calculates new node position based on Force component
 fn update_nodes(
     dt: f32,
     params: &Res<Params>,

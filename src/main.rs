@@ -2,10 +2,9 @@ mod simulation;
 
 use bevy::prelude::*;
 use bevy_prototype_lyon::prelude::*;
-use bevy_silk::prelude::*;
 use simulation::{Params, Simulation};
 
-fn main() {
+pub fn main() -> Result<(), String> {
     App::new()
         .add_plugins(DefaultPlugins)
         .add_plugin(ShapePlugin)
@@ -29,4 +28,6 @@ fn main() {
             ..default()
         })
         .run();
+
+    Ok(())
 }

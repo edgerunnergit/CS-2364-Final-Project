@@ -6,10 +6,12 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-bevy = {version = "0.13.2", features = ["dynamic_linking"]}
-bevy_prototype_lyon = "0.11.0"
-bevy_silk = "0.8.0"
-tokio = { version = "1.37.0", features = ["full"] }
+bevy_ecs = "0.8.0"
+bevy = { version="0.8.0", features= ["trace"]}
+bevy_prototype_lyon = "0.6.0"
+bevy_egui = "0.15"
+web-sys = "0.3.59"
+bevy_prototype_debug_lines = "0.8"
 
 
 [profile.dev]
